@@ -70,8 +70,9 @@ class _WebViewExampleState extends State<WebViewExample> {
                         child: GestureDetector(
                           onHorizontalDragUpdate: (updateDetails) {},
                           child: WebView(
-                            initialUrl:"https://indigo-lorie-96.tiiny.site",
-                                // 'https://mobile.useinsider.com/api/template_store/v1/render/eyJhbGciOiJIUzI1NiJ9.eyJpbmFwcF9pZCI6MTczLCJ0ZW1wbGF0ZV9pZCI6NTQ5LCJwYXJ0bmVyX25hbWUiOiJjb25jdW5ndm5uZXciLCJ2YXJpYW50X2lkIjozNDN9.vodDRNi9S3ESYgRjh38v5DLcnyyf8rKhgnqUBL647-Y/B5D3422965694FFA8EE46779A12C8B48/d0343142-d93b-47ba-a81f-a061df2367c2/vi',
+                            initialUrl: "https://tan-christye-3.tiiny.site/",
+                            // initialUrl: "data:text/html;base64,$contentBase64",  ////"https://tan-christye-3.tiiny.site/",
+                            // 'https://mobile.useinsider.com/api/template_store/v1/render/eyJhbGciOiJIUzI1NiJ9.eyJpbmFwcF9pZCI6MTczLCJ0ZW1wbGF0ZV9pZCI6NTQ5LCJwYXJ0bmVyX25hbWUiOiJjb25jdW5ndm5uZXciLCJ2YXJpYW50X2lkIjozNDN9.vodDRNi9S3ESYgRjh38v5DLcnyyf8rKhgnqUBL647-Y/B5D3422965694FFA8EE46779A12C8B48/d0343142-d93b-47ba-a81f-a061df2367c2/vi',
                             javascriptMode: JavascriptMode.unrestricted,
                             onWebViewCreated:
                                 (WebViewController webViewController) {
@@ -101,12 +102,13 @@ class _WebViewExampleState extends State<WebViewExample> {
 
   JavascriptChannel _toasterJavascriptChannel(BuildContext context) {
     return JavascriptChannel(
-        name: 'Toaster',
+        name: 'SUBMIT',
         onMessageReceived: (JavascriptMessage message) {
           // ignore: deprecated_member_use
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text(message.message)),
           );
+          Navigator.pop(context);
         });
   }
 
